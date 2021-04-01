@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+/*Обнуление*/
+		*{padding: 0;margin: 0;border: 0;}
+		*,*:before,*:after{-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}
+		:focus,:active{outline: none;}
+		a:focus,a:active{outline: none;}
+		nav,footer,header,aside{display: block;}
+		html,body{height:100%;width:100%;font-size:100%;line-height:1;font-size:14px;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
+		input,button,textarea{font-family:inherit;}
+		input::-ms-clear{display: none;}
+		button{cursor: pointer;}
+		button::-moz-focus-inner{padding:0;border:0;}
+		a,a:visited{text-decoration: none;}
+		a:hover{text-decoration: none;}
+		ul li{list-style: none;}
+		img{vertical-align: top;}
+		h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
+/*--------------------*/
+
+	body {
+		font-family: 'Russo One', sans-serif;
+		background: rgba(163,198,192,0.3);
+	}
+.mainbox {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+.card {
+	flex: 0 0 300px;
+	height: 500px;
+	background: transparent;
+	margin: 0 20px;
+	box-shadow: inset 5px 5px 5px rgba(0,0,0,0.2), inset -5px -5px 15px rgba(255,255,255,0.1), 5px 5px 15px rgba(0,0,0,0.3), 5px 5px 5px rgba(255,255,255,0.1);
+	border-radius: 15px;
+	position: relative;
+}
+
+.card__up {
+	width: 280px;
+	height: 480px;
+	background: rgba(163,198,192,0.1);
+	border-radius: 15px;
+	position: absolute;
+	top: 10px;
+	left: 12px;
+	text-align: center;
+	color: rgba(12,171,203,1);
+	text-shadow: 0px 1px 1px #000;
+	padding: 15px 0 0 0;
+	display: flex;
+	flex-direction: column;
+	box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.6);
+	transition: all 0.3s ease;
+}
+.card__up:hover {
+	top: -30px;
+}
+.card__up h2 {
+	font-family: 'Lexend', sans-serif;
+	font-size: 36px;
+	font-weight: 600;
+	margin: 5px 0 10px 0;
+}
+.card__up p {
+	font-size: 22px;
+	font-weight: 800;
+	padding: 0 0 7px 0;
+}
+.card__up p:nth-child(3) {
+	font-size: 40px;
+	padding: 25px 0 0 0;
+}
+.card__price {
+	flex: 1 1 auto;
+}
+
+.button {
+	margin: 0 0 35px 0;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 600;
+}
+.button a {
+	display: inline-block;
+	padding: 10px 20px;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: rgba(0,0,139,0.1);
+	background: linear-gradient(#08E8DE 5%, #8B00FF 95%);
+	border-radius: 5px;
+	box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.7);
+}
+.button a:hover {
+	background: linear-gradient(#08E8DE 5%, #FF0066 95%);
+	box-shadow: 2px 2px 14px 2px rgba(0,0,0,0.7);
+}
+
+.dark_theme[type="checkbox"] {
+	position: fixed;
+	z-index: 5;
+	top: 20px;
+	left: 50%;
+	cursor: pointer;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+.dark_theme[type="checkbox"]:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 70px;
+	height: 30px;
+	background: rgba(105,105,105, 0.7);
+	border-radius: 10px;
+	box-shadow: inset 0px 0px 10px 1px #000;
+}
+.dark_theme[type="checkbox"]:checked ~ * {
+	background: rgba(0,0,0,0.8);
+	transition: background 1.5s ease-in-out;
+}
+.dark_theme[type="checkbox"]:after {
+	content: '';
+	position: absolute;
+	top: 3px;
+	left: 2px;
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	background: #003153;
+	box-shadow: inset 0px 0px 3px #fff;
+	transition: all 1s ease;
+}
+.dark_theme[type="checkbox"]:checked::after {
+	transform: translateX(41px);
+	background: #fff;
+	box-shadow: inset 0px 0px 3px #003153;
+}
